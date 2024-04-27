@@ -16,10 +16,7 @@
   <div class="content-container">
     <div class="top-section">
       <h1 class="title2">بغتاليا</h1>
-      <div class="login-section" >
-        <h2 class="subtitle">هل لديكَ حساب؟</h2>
-        <button class="login-button">تسجيل الدخول</button>
-      </div>
+      
     </div>
     <div class="bottom-section">
       <h1 class="form-title">إنشاء حساب</h1>

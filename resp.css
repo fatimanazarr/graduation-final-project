@@ -1,47 +1,39 @@
-@media only screen and (min-width: 282px) and (max-width: 391px) {
+@media only screen and (min-width: 283px) and (max-width: 391px) {
     .logo h1 {
-      font-size: 40px;
+      font-size: 30px;
       margin-top: 6%;
       margin-right: -2%;
     }
-    
-    .menu {
-      display: none;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative; 
     }
+    
     .menu ul {
       list-style: none;
       display: flex;
-      flex-direction: column;
-      
+      margin-right: -5vh;
     }
-    .menu ul li {
-      margin-left: 30px;
-      margin-bottom: 10px;
-      width: 100px;
-      font-size: 15px;
-  }
-    .menu-icon {
-      display: inline-block;
-      margin-right: 65%;
-      margin-top: -15px;
-    }
-    .menu.open {
-      left: 0;
-    }
-    .menu-bar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    z-index: 9999;
-    background: #fff;
-    overflow-y: auto;
-  }
     
-    .navbar {
-      justify-content: flex-start;
+    .menu ul li {
+      margin-right: 12px;
+      font-size: 11px;
     }
-    .search{
-      display: none;
+
+    .dropbtn {
+      padding: 16px;
+      font-size: 11px;
+      font-family: 'Avenir';
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+  }
+    .shoppingBag
+    {
+      margin-top: -1vh;
+
     }
 
     /* تصميم الدائرة البيجي اللي بالسكشن الاول*/
@@ -338,35 +330,44 @@
     height: 200px;
     
     }
-    .navbar2 {
-      justify-content: flex-start;
-      }
     .logo2 h1 {
       font-size: 30px;
       margin-top: 6%;
       margin-right: -2%;
     }
-    .menu2{
-      display: none;
+    .navbar2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative; 
     }
+    
     .menu2 ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        
-     }
+      list-style: none;
+      display: flex;
+      margin-right: -5vh;
+    }
+    
     .menu2 ul li {
-      
-      margin-left: 30px;
-      margin-bottom: 10px;
-      width: 100px;
-      font-size: 15px;
-      }
-      
-    .search2 input {
-        display: none;
+      margin-right: 12px;
+      font-size: 11px;
     }
 
+    .dropbtn {
+      padding: 16px;
+      font-size: 11px;
+      font-family: 'Avenir';
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: #F1EEE7;
+      background-color: transparent;
+  }
+    .shoppingBag
+    {
+      margin-top: -1vh;
+
+    }
     /************ CATEGORIES SECTION */
 
     .categories-list {
@@ -400,31 +401,42 @@
     .navbar3 {
       justify-content: flex-start;
       }
-    .logo3 h1 {
-      font-size: 40px;
-      margin-top: 6%;
-      margin-right: 3vh;
-    }
-    .menu3{
-      display: none;
-    }
-    .menu3 ul {
-        list-style: none;
+      .logo3 h1 {
+        font-size: 30px;
+        margin-top: 6%;
+        margin-right: -2%;
+      }
+      .navbar3 {
         display: flex;
-        flex-direction: column;
-        
-     }
-    .menu3 ul li {
-      
-      margin-left: 30px;
-      margin-bottom: 10px;
-      width: 100px;
-      font-size: 15px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative; 
       }
       
-    .search3 input {
-        display: none;
+      .menu3 ul {
+        list-style: none;
+        display: flex;
+        margin-right: -5vh;
+      }
+      
+      .menu3 ul li {
+        margin-right: 12px;
+        font-size: 11px;
+      }
+  
+      .dropbtn {
+        padding: 16px;
+        font-size: 11px;
+        font-family: 'Avenir';
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
     }
+      .shoppingBag
+      {
+        margin-top: -1vh;
+  
+      }
     .new-section{
       margin-bottom: 2vh;
       }
@@ -663,6 +675,119 @@ margin-right: 23vh;}
   box-shadow: none;
 }
     
+/*********** SHOPPING BAG RESPONSITIVITY ************/
+.hero-section5{
+  background-size: 100%;
+  height: 200px;
+  
+  }
+  
+.dish {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr; /* Adjust column widths as needed */
+  align-items: center;
+}
+
+.dish h1 {
+  grid-column: 1;
+  font-size: 16px;
+}
+
+.dish p {
+  color: #000000;
+  font-family: Avenir;
+  font-size: 11px;
+  margin-right: 3vh;
+}
+
+.dish + .dish {
+  border-top: 1px solid #964325;
+  margin-top: 10px;
+  margin-left: 0vh; 
+  margin-right: 0vh;
+}
+.total-price-button-container {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 7vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalPriceH1
+{
+  margin-right: 7vh;
+  margin-top: 4vh;
+  font-size: 14px;
+}
+#finishShoppingButton {
+  width: 150px;
+  height: 36px;
+  margin-top: 20px;
+  margin-left: 0vh;
+  font-size: 11px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-icon {
+width: 15px;
+height: 15px;
+cursor: pointer;
+margin-right: 15px;
+}
+
+.quantity {
+font-size: 12px;
+margin-right: 5px;
+display: flex;
+align-items: center;
+}
+
+/*** cUSTOMER fORM style ********/
+#heading {
+  font-size: 40px;
+}
+#subheading {
+  font-size: 14px;
+}
+
+input[id="table-number"] {
+  width: 216px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+input[id="first-name"] {
+  margin-left: 1.7vh;
+  width: 216px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+#submit-button {
+  width: 216px;
+  height: 35.91px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+#order-type {
+  width: 220px;
+  height: 35.91px;
+  font-size: 14px;
+}
+#total-price-heading {
+  font-size: 16px;
+}
 }
 
 @media only screen and (min-width: 391px) and (max-width: 490px) {
@@ -671,47 +796,37 @@ margin-right: 23vh;}
     margin-top: 6%;
     margin-right: -2vh;
   }
-  
-  .menu {
-    display: none;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
   }
+  
   .menu ul {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    
+    margin-right: -5vh;
   }
-  .menu ul li {
-    margin-left: 30px;
-    margin-bottom: 10px;
-    width: 100px;
-    font-size: 15px;
-}
-  .menu-icon {
-    display: inline-block;
-    margin-right: 65%;
-    margin-top: -15px;
-  }
-  .menu.open {
-    left: 0;
-  }
-  .menu-bar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 9999;
-  background: #fff;
-  overflow-y: auto;
-}
   
-  .navbar {
-    justify-content: flex-start;
-    margin-right: 5vh;
-  }
-  .search{
-    display: none;
+  .menu ul li {
+    margin-right: 12px;
+    font-size: 11px;
   }
 
+  .dropbtn {
+    padding: 16px;
+    font-size: 11px;
+    font-family: 'Avenir';
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+  .shoppingBag
+  {
+    margin-top: -1vh;
+
+  }
   /* تصميم الدائرة البيجي اللي بالسكشن الاول*/
   .image {
       display: none;
@@ -982,44 +1097,49 @@ font-size: 10px;
 }
 
 
-
-
-
-
-
 /****** Appetizers Page css responsitvity *****/
 .hero-section2{
   background-size: 100%;
   height: 200px;
   
   }
-  .navbar2 {
-    justify-content: flex-start;
-    }
   .logo2 h1 {
     font-size: 30px;
     margin-top: 6%;
-    margin-right: 2%;
+    margin-right: -2%;
   }
-  .menu2{
-    display: none;
+  .navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
   }
+  
   .menu2 ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      
-   }
+    list-style: none;
+    display: flex;
+    margin-right: -5vh;
+  }
+  
   .menu2 ul li {
-    
-    margin-left: 30px;
-    margin-bottom: 10px;
-    width: 100px;
-    font-size: 15px;
-    }
-    
-  .search2 input {
-      display: none;
+    margin-right: 12px;
+    font-size: 11px;
+  }
+
+  .dropbtn {
+    padding: 16px;
+    font-size: 11px;
+    font-family: 'Avenir';
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #F1EEE7;
+    background-color: transparent;
+}
+  .shoppingBag
+  {
+    margin-top: -1vh;
+
   }
 
   /************ CATEGORIES SECTION */
@@ -1310,51 +1430,151 @@ align-items: center;
 border: none;
 box-shadow: none;
 }
-  
+  /*********** SHOPPING BAG RESPONSITIVITY ************/
+.dish {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr; /* Adjust column widths as needed */
+  align-items: center;
+}
+
+.dish h1 {
+  grid-column: 1;
+  font-size: 16px;
+}
+
+.dish p {
+  color: #000000;
+  font-family: Avenir;
+  font-size: 11px;
+  margin-right: 3vh;
+}
+
+.dish + .dish {
+  border-top: 1px solid #964325;
+  margin-top: 10px;
+  margin-left: 0vh; 
+  margin-right: 0vh;
+}
+.total-price-button-container {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 7vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalPriceH1
+{
+  margin-right: 7vh;
+  margin-top: 4vh;
+  font-size: 14px;
+}
+#finishShoppingButton {
+  width: 150px;
+  height: 36px;
+  margin-top: 20px;
+  margin-left: 0vh;
+  font-size: 11px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-icon {
+width: 15px;
+height: 15px;
+cursor: pointer;
+margin-right: 15px;
+}
+
+.quantity {
+font-size: 12px;
+margin-right: 5px;
+display: flex;
+align-items: center;
+}
+
+/*** cUSTOMER fORM style ********/
+#heading {
+  font-size: 50px;
+}
+#subheading {
+  font-size: 16px;
+}
+
+input[id="table-number"] {
+  width: 316px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+input[id="first-name"] {
+  margin-left: 1.7vh;
+  width: 316px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+#submit-button {
+  width: 316px;
+  height: 35.91px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+#order-type {
+  width: 320px;
+  height: 35.91px;
+  font-size: 16px;
+}
+#total-price-heading {
+  font-size: 18px;
+}
 }
 
 @media only screen and (max-width: 282px) {
   .logo h1 {
-    font-size: 40px;
+    font-size: 25px;
     margin-top: 6%;
     margin-right: -18vh;
   }
-  .menu {
-    display: none;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
   }
+  
   .menu ul {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    
+    margin-right: -15vh;
   }
-  .menu ul li {
-    margin-left: 30px;
-    margin-bottom: 10px;
-    width: 100px;
-    font-size: 15px;
-}
-  .menu-icon {
-    display: inline-block;
-    margin-right: 33vh;
-    margin-top: -15px;
-  }
-  .menu.open {
-    left: 0;
-  }
-  .menu-bar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow-y: auto;
-}
   
-  .navbar {
-    justify-content: flex-start;
+  .menu ul li {
+    margin-right: 12px;
+    font-size: 11px;
   }
-  .search{
-    display: none;
+
+  .dropbtn {
+    padding: 16px;
+    font-size: 11px;
+    font-family: 'Avenir';
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+  .shoppingBag
+  {
+    margin-top: -1vh;
+
   }
 
   /* تصميم الدائرة البيجي اللي بالسكشن الاول*/
@@ -1642,11 +1862,6 @@ font-size: 10px;
 }
 
 
-
-
-
-
-
 /****** Appetizers Page css responsitvity *****/
 .hero-section2{
   background-size: 100%;
@@ -1655,35 +1870,41 @@ font-size: 10px;
   height: 200px;
   
   }
-  .navbar2 {
-    justify-content: flex-start;
-    }
   .logo2 h1 {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 6%;
-    margin-right: 2vh;
+    margin-right: 1vh;
   }
-  .menu2{
-    display: none;
+  .navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
   }
+  
   .menu2 ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      
-   }
-  .menu2 ul li {
-    
-    margin-left: 30px;
-    margin-bottom: 10px;
-    width: 100px;
-    font-size: 15px;
-    }
-    
-  .search2 input {
-      display: none;
+    list-style: none;
+    display: flex;
+    margin-right: -5vh;
   }
+  
+  .menu2 ul li {
+    margin-right: 12px;
+    font-size: 8px;
+  }
+  .dropbtn {
+    padding: 16px;
+    font-size: 10px;
+    font-family: 'Avenir';
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+  .shoppingBag
+  {
+    margin-top: -1vh;
 
+  }
   /************ CATEGORIES SECTION */
 
   .categories-list {
@@ -1904,7 +2125,111 @@ margin-top: -50px;
   box-shadow: none;
 }
     
-    
+  /*********** SHOPPING BAG RESPONSITIVITY ************/
+.dish {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr; /* Adjust column widths as needed */
+  align-items: center;
+}
+
+.dish h1 {
+  grid-column: 1;
+  font-size: 12px;
+}
+
+.dish p {
+  font-size: 9px;
+  margin-right: 3vh;
+}
+
+.dish + .dish {
+  border-top: 1px solid #964325;
+  margin-top: 10px;
+  margin-left: 0vh; 
+  margin-right: 0vh;
+}
+.total-price-button-container {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 7vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalPriceH1
+{
+  margin-right: 4vh;
+  margin-top: 4vh;
+  font-size: 12px;
+}
+#finishShoppingButton {
+  width: 100px;
+  height: 26px;
+  margin-top: 20px;
+  margin-left: 0vh;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-icon {
+width: 15px;
+height: 15px;
+cursor: pointer;
+margin-right: 15px;
+}
+
+.quantity {
+font-size: 12px;
+margin-right: 5px;
+display: flex;
+align-items: center;
+}  
+
+/*** cUSTOMER fORM style ********/
+#heading {
+  font-size: 40px;
+}
+#subheading {
+  font-size: 14px;
+}
+
+input[id="table-number"] {
+  width: 216px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+input[id="first-name"] {
+  margin-left: 1.7vh;
+  width: 216px;
+  height: 35.91px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #A6A6A6;
+  border-radius: 4px;
+}
+#submit-button {
+  width: 216px;
+  height: 35.91px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+#order-type {
+  width: 220px;
+  height: 35.91px;
+  font-size: 14px;
+}
+#total-price-heading {
+  font-size: 16px;
+}
 }
 
 @media only screen and (min-width: 539px) and (max-width: 1024px) {
@@ -2329,6 +2654,7 @@ margin-top: -50px;
     height: 40px;
     margin-top: 50px;
   }
+
  /************** END OF SIGN UP RESPONSITVITY **********/
 
  /************* menu page  responsitvity **********/
@@ -2491,6 +2817,61 @@ margin-top: -50px;
     border: none;
     box-shadow: none;
   }
-      
+     /*********** SHOPPING BAG RESPONSITIVITY ************/
+
+.dish h1 {
+  grid-column: 1;
+  font-size: 20px;
+}
+
+.dish p {
+  font-size: 18px;
+  margin-right: 3vh;
+}
+.dish + .dish {
+  border-top: 1px solid #964325;
+  margin-top: 10px;
+  margin-left: 0vh; 
+  margin-right: 0vh;
+}
+.total-price-button-container {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 7vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalPriceH1
+{
+  margin-right: 7vh;
+  margin-top: 4vh;
+  font-size: 18px;
+}
+#finishShoppingButton {
+  width: 190px;
+  height: 46px;
+  margin-top: 20px;
+  margin-left: 0vh;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-icon {
+width: 15px;
+height: 15px;
+cursor: pointer;
+margin-right: 15px;
+}
+
+.quantity {
+font-size: 12px;
+margin-right: 5px;
+display: flex;
+align-items: center;
+} 
   }
  

@@ -22,116 +22,6 @@ if (!isset($_SESSION['username'])) {
             height: 100vh;
         }
         
-        #section {
-            text-align: center;
-            margin-top: -10vh;
-        }
-        
-        #heading {
-            color: black;
-            font-family: Mirza;
-            font-size: 50px;
-        }
-        
-        #subheading {
-            color: #303030;
-            font-family: Avenir;
-            font-size: 16px;
-            font-weight: lighter;
-        }
-        
-        #description {
-            color: #A6A6A6;
-            font-family: Avenir;
-            font-size: 35px;
-            width: 400px;
-        }
-        
-        #form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        input[id="table-number"], input[id="phone"] {
-            width: 416px;
-            height: 35.91px;
-            margin-bottom: 10px;
-            direction: rtl;
-            font-family: Avenir;
-            font-size: 16px;
-            color: #A6A6A6;
-            background-color: transparent;
-            border: 1px solid #A6A6A6;
-            border-radius: 4px;
-        }
-        input[id="first-name"]{
-            margin-left: 1.7vh;
-        }
-        input[id="first-name"], input[id="last-name"] {
-            width: 200px;
-            height: 35.91px;
-            margin-right: 0vh;
-            margin-bottom: 10px;
-            direction: rtl;
-            font-family: Avenir;
-            font-size: 16px;
-            color: #A6A6A6;
-            background-color: transparent;
-            border: 1px solid #A6A6A6;
-            border-radius: 4px;
-        }
-        #submit-button {
-            width: 416px;
-            height: 35.91px;
-            background-color: #964325;
-            border-radius: 4px;
-            border: none;
-            box-shadow: none;
-            color: white;
-            font-family: Avenir;
-            font-size: 16px;
-        }
-        
-        #order-type {
-            width: 420px;
-            height: 35.91px;
-            margin-bottom: 10px;
-            direction: rtl;
-            font-family: Avenir;
-            font-size: 16px;
-            color: #A6A6A6;
-            background-color: transparent;
-            border: 1px solid #A6A6A6;
-            border-radius: 4px;
-        }
-        
-        #pickup-time {
-            display: none;
-            width: 416px;
-        }
-        
-        #pickup-time input[type="text"] {
-            width: 416px;
-            height: 35.91px;
-            margin-bottom: 10px;
-            direction: rtl;
-            font-family: Avenir;
-            font-size: 16px;
-            color: #A6A6A6;
-            background-color: transparent;
-            border: 1px solid #A6A6A6;
-            border-radius: 4px;
-        }
-        
-        #total-price-heading {
-            color: black;
-            font-family: Mirza;
-            font-size: 20px;
-            text-align: right;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -140,24 +30,24 @@ if (!isset($_SESSION['username'])) {
         <h2 id="subheading">يرجى إدخال المعلومات المطلوبة بالأسفل</h2>
         
         <form id="form" style="direction: rtl;">
-            <div style="display: flex; justify-content: space-between;">
-                <input type="text" id="first-name" placeholder="الاسم الأول">
-            </div>
-            <input type="text" id="table-number" placeholder="رقم الطاولة">
-            <select onchange="togglePickupTime()" id="order-type">
-                <option value="dine-in">تناول في المطعم</option>
-                <option value="take-away">توصيل</option>
-            </select>
-            <div id="pickup-time">
+  <div style="display: flex; justify-content: space-between;">
+    <input type="text" id="first-name" placeholder="الاسم الأول">
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <select onchange="togglePickupTime()" id="order-type">
+      <option value="dine-in" selected>تناول في المطعم</option>
+      <option value="take-away">توصيل</option>
+      <option value="reservation">حجز طاولة</option>
+    </select>
+  </div>
+  <div id="pickup-time" style="display: none;">
     <input type="time" id="pickup-time-input" placeholder="وقت الاستلام" min="09:00" max="21:00">
-</div>
-
-            <h1 id="total-price-heading">السعر الكلي:</h1>
-            <h3 id="total-price">0 دينار</h3>
-            <input type="submit" id="submit-button" value="إرسال" onclick="submitOrder(selectedItems, event)">
-
-
-        </form>
+  </div>
+  <input type="text" id="table-number" placeholder="رقم الطاولة">
+  <h1 id="total-price-heading">السعر الكلي:</h1>
+  <h3 id="total-price">0 دينار</h3>
+  <input type="submit" id="submit-button" value="إرسال" onclick="submitOrder(selectedItems, event)">
+</form>
     </section>
 
   
@@ -188,69 +78,78 @@ if (!isset($_SESSION['username'])) {
     document.getElementById('first-name').value = customerName;
 
     function togglePickupTime() {
-        var orderType = document.getElementById("order-type");
-        var pickupTimeDiv = document.getElementById("pickup-time");
-        var tableNumberInput = document.getElementById("table-number");
-        var selectedOption = orderType.options[orderType.selectedIndex].value;
+  var orderType = document.getElementById("order-type");
+  var pickupTimeDiv = document.getElementById("pickup-time");
+  var tableNumberInput = document.getElementById("table-number");
+  var selectedOption = orderType.options[orderType.selectedIndex].value;
 
-        if (selectedOption === "take-away") {
-            pickupTimeDiv.style.display = "block";
-            tableNumberInput.style.display = "none";
-        } else {
-            pickupTimeDiv.style.display = "none";
-            tableNumberInput.style.display = "block";
-        }
-    }
+  if (selectedOption === "take-away") {
+    pickupTimeDiv.style.display = "block";
+    tableNumberInput.style.display = "none";
+  } else if (selectedOption === "reservation") {
+    pickupTimeDiv.style.display = "block";
+    tableNumberInput.style.display = "none";
+    document.getElementById("pickup-time-input").setAttribute("type", "time");
+  } else {
+    pickupTimeDiv.style.display = "none";
+    tableNumberInput.style.display = "block";
+  }
+}
 
-    function submitOrder(selectedItems, event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    
-    // Retrieve form inputs
-    const customerFirstName = document.getElementById('first-name').value;
-    const orderType = document.getElementById('order-type').value;
-    const tableNumber = document.getElementById('table-number').value;
-    const pickupTime = document.getElementById('pickup-time-input').value;
+function submitOrder(selectedItems, event) {
+  event.preventDefault(); // Prevent the default form submission behavior
 
-    // Extract all order details from selectedItems array
-    const orderDetails = selectedItems.map(item => {
-        return {
-            DishName: item.DishName,
-            DishDescription: item.DishDescription, // Include dish description
-            TotalPrice: item.TotalPrice, // Include total price
-            Quantity: item.quantity // Include quantity
-        };
-    });
+  // Retrieve form inputs
+  const customerFirstName = document.getElementById('first-name').value;
+  const orderType = document.getElementById('order-type').value;
+  const tableNumber = document.getElementById('table-number').value;
 
-    // Calculate total price
-    const totalPrice = orderDetails.reduce((acc, item) => acc + item.TotalPrice, 0);
+  // Retrieve the pickup time value
+  let pickupTime = '';
+  if (orderType === 'take-away') {
+    pickupTime = document.getElementById('pickup-time-input').value;
+  }
 
-    // Create the payload object
-    const payload = {
-        'first-name': customerFirstName,
-        'order-type': orderType,
-        'table-number': tableNumber,
-        'pickup-time-input': pickupTime,
-        'totalPrice': totalPrice, 
-        'selectedItems': orderDetails 
+  // Extract all order details from selectedItems array
+  const orderDetails = selectedItems.map(item => {
+    return {
+      DishName: item.DishName,
+      DishDescription: item.DishDescription, // Include dish description
+      TotalPrice: item.TotalPrice, // Include total price
+      Quantity: item.quantity // Include quantity
     };
+  });
 
-    fetch('save_order.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
+  // Calculate total price
+  const totalPrice = orderDetails.reduce((acc, item) => acc + item.TotalPrice, 0);
+
+  // Create the payload object
+  const payload = {
+    'first-name': customerFirstName,
+    'order-type': orderType,
+    'table-number': tableNumber,
+    'pickup-time-input': pickupTime,
+    'totalPrice': totalPrice,
+    'selectedItems': orderDetails
+  };
+
+  fetch('save_order.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+
+      window.location.href = 'success.php';
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.message);
-
-            window.location.href = 'success.php';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while submitting the order. Please try again later.');
-        });
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred while submitting the order. Please try again later.');
+    });
 }
 
 

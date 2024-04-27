@@ -21,7 +21,6 @@ session_start();
     </div>
     <div class="menu2">
       <ul>
-      <div class="close-icon" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></div>
         <li><a href="index.php" style="text-decoration: none; color: white;">الرئيسية</a></li>
         <li><a href="appetizers.php" style="text-decoration: none; color: white;">قائمة الطعام</a></li>
         <li><a href="about.php" style="text-decoration: none; color: white;">من نحن</a></li>
@@ -41,7 +40,6 @@ session_start();
         ?>
          </ul>
     </div>
-    <div class="menu-icon" onclick="toggleMenu()" style="color:  white;"><i class="fa-solid fa-bars"></i></div>
 
     <div class="shoppingBag2">
     <i class="fa-solid fa-bag-shopping fa-2xl" style="color: white;" onclick="goToSecondPage()"></i>
@@ -69,46 +67,3 @@ session_start();
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-<style>
-
-        .dropbtn {
-            color: #fff;
-            padding: 16px;
-            font-size: 25px;
-            font-family: 'Avenir';
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
-</style>
