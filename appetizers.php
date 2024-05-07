@@ -53,14 +53,14 @@ session_start();
 </section>
 
 <section class="categories-section">
-<ul class="categories-list" style="direction: rtl;">
-  <li><a href="#" onclick="fetchAndPopulateMenuItems('مقبلات')">المقبلات</a></li>
-  <li><a href="#" onclick="fetchAndPopulateMenuItems('بيتزا')">البيتزا</a></li>
-  <li><a href="#" onclick="fetchAndPopulateMenuItems('باستا')">الباستا</a></li>
-  <li><a href="#" onclick="fetchAndPopulateMenuItems('تحلية')">التحلية</a></li>
-  <li><a href="#" onclick="fetchAndPopulateMenuItems('مشروبات')">المشروبات</a></li>
-</ul>
-<div class="menu-items"></div>
+  <ul class="categories-list" style="direction: rtl;">
+    <li><a href="#" onclick="fetchAndPopulateMenuItems('مقبلات')">المقبلات</a></li>
+    <li><a href="#" onclick="fetchAndPopulateMenuItems('بيتزا')">البيتزا</a></li>
+    <li><a href="#" onclick="fetchAndPopulateMenuItems('باستا')">الباستا</a></li>
+    <li><a href="#" onclick="fetchAndPopulateMenuItems('تحلية')">التحلية</a></li>
+    <li><a href="#" onclick="fetchAndPopulateMenuItems('مشروبات')">المشروبات</a></li>
+  </ul>
+  <div class="menu-items"></div>
 </section>
 <script src="https://kit.fontawesome.com/4c6be1067d.js" crossorigin="anonymous"></script>
 

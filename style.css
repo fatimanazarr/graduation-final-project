@@ -743,7 +743,10 @@ text-align: center;
   border: none; /* Remove the border */
   box-shadow: none;
 }
-
+.button-clicked {
+  background-color: white;
+  color: #964325;
+}
 /************ ABOUT US PAGE STYLE *****************/
 .hero-section3 {
 padding: 1%;
@@ -1273,7 +1276,7 @@ font-size: 16px;
 
 .orderCard {
   width: 273.78px;
-  height: 300px;
+  height: 220px;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;

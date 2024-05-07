@@ -102,34 +102,42 @@ function fetchAndPopulateMenuItems(category) {
           itemDiv.appendChild(dishPrice);
 
           // Create the "Add to Basket" button
-      const addToBasketButton = document.createElement("button");
-      addToBasketButton.textContent = "إضافة للسلة";
-      addToBasketButton.classList.add("add-to-basket-button");
+          const addToBasketButton = document.createElement("button");
+          addToBasketButton.textContent = "إضافة للسلة";
+          addToBasketButton.classList.add("add-to-basket-button");
 
-      // Add event listener for the "Add to Basket" button
-      addToBasketButton.addEventListener("click", () => {
-        const selectedItemIndex = selectedItems.findIndex(
-          selectedItem => selectedItem.DishName === item.DishName
-        );
-      
-        if (selectedItemIndex !== -1) {
-          // Item already exists in the array, increment the quantity
-          selectedItems[selectedItemIndex].quantity++;
-        } else {
-          // Item doesn't exist in the array, create a new object
-          const selectedItem = {
-            DishName: item.DishName,
-            TotalPrice: item.TotalPrice,
-            DishDescription: item.DishDescription,
-            quantity: 1
-          };
-          selectedItems.push(selectedItem);
-        }
-      
-        console.log(selectedItems);
-       
-        
-      });
+                    // Add event listener for the "Add to Basket" button
+          addToBasketButton.addEventListener("click", () => {
+            // Toggle the CSS class when the button is clicked
+            addToBasketButton.classList.toggle("button-clicked");
+
+            // Remove the "button-clicked" class after 5 seconds
+            setTimeout(() => {
+              addToBasketButton.classList.remove("button-clicked");
+            }, 150);
+
+
+            const selectedItemIndex = selectedItems.findIndex(
+              selectedItem => selectedItem.DishName === item.DishName
+            );
+
+            if (selectedItemIndex !== -1) {
+              // Item already exists in the array, increment the quantity
+              selectedItems[selectedItemIndex].quantity++;
+            } else {
+              // Item doesn't exist in the array, create a new object
+              const selectedItem = {
+                DishName: item.DishName,
+                TotalPrice: item.TotalPrice,
+                DishDescription: item.DishDescription,
+                quantity: 1
+              };
+              selectedItems.push(selectedItem);
+            }
+
+            console.log(selectedItems);
+          });
+
           // Append the button after the price
           itemDiv.appendChild(addToBasketButton);
 
@@ -147,7 +155,6 @@ function fetchAndPopulateMenuItems(category) {
       console.error("Error:", error);
     });
 }
-
 function populateMenuItems() {
   // Fetch the first 8 items from the "menu" and "images" tables
   fetch("fetch_data.php")

@@ -70,84 +70,90 @@ session_start();
     <script src="https://kit.fontawesome.com/4c6be1067d.js" crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <script>
-    function fetchOrders() {
-        fetch('order.php')
-            .then(response => response.json())
-            .then(data => {
-                // Initialize an object to store aggregated orders
-                const aggregatedOrders = {};
+            
+                function fetchOrders() {
+                    fetch('order.php')
+                        .then(response => response.json())
+                        .then(data => {
+                            // Initialize an object to store aggregated orders
+                            const aggregatedOrders = {};
 
-                // Loop through the orders and aggregate them by dish name
-                data.orders.forEach(order => {
-                    const { dishName, customerFirstName } = order;
-                    const dishNameList = dishName.split(',');
-                    dishNameList.forEach(dish => {
-                        const trimmedDish = dish.trim();
-                        if (!aggregatedOrders[trimmedDish]) {
-                            aggregatedOrders[trimmedDish] = {
-                                customerFirstNames: [customerFirstName],
-                                dishDescription: '',
-                                totalPrice: 0
-                            };
-                        } else {
-                            // If the dish already exists, just add the customer name
-                            aggregatedOrders[trimmedDish].customerFirstNames.push(customerFirstName);
-                        }
-                    });
-                });
+                            // Loop through the orders and aggregate them by dish name
+                            data.orders.forEach(order => {
+                                const { dishName, customerFirstName } = order;
+                                const dishNameList = dishName.split(',');
+                                dishNameList.forEach(dish => {
+                                    const trimmedDish = dish.trim();
+                                    if (!aggregatedOrders[trimmedDish]) {
+                                        aggregatedOrders[trimmedDish] = {
+                                            customerFirstNames: [customerFirstName],
+                                            dishDescription: '',
+                                            totalPrice: 0
+                                        };
+                                    } else {
+                                        // If the dish already exists, just add the customer name
+                                        aggregatedOrders[trimmedDish].customerFirstNames.push(customerFirstName);
+                                    }
+                                });
+                            });
 
-                // Update dish description and total price for aggregated orders
-                Object.keys(aggregatedOrders).forEach(dishName => {
-                    const menuItem = data.menu.find(item => item.DishName === dishName);
-                    if (menuItem) {
-                        aggregatedOrders[dishName].dishDescription = menuItem.DishDescription;
-                        aggregatedOrders[dishName].totalPrice = menuItem.TotalPrice * aggregatedOrders[dishName].customerFirstNames.length;
-                    }
-                });
+                            // Update dish description and total price for aggregated orders
+                            Object.keys(aggregatedOrders).forEach(dishName => {
+                                const menuItem = data.menu.find(item => item.DishName === dishName);
+                                if (menuItem) {
+                                    aggregatedOrders[dishName].dishDescription = menuItem.DishDescription;
+                                    aggregatedOrders[dishName].totalPrice = menuItem.TotalPrice * aggregatedOrders[dishName].customerFirstNames.length;
+                                }
+                            });
 
-                // Create order cards dynamically
-                const ordersContainer = document.querySelector('.pastOrdersSection');
+                            // Create order cards dynamically
+                            const ordersContainer = document.querySelector('.pastOrdersSection');
 
-                Object.keys(aggregatedOrders).forEach(dishName => {
-                    const { customerFirstNames, dishDescription, totalPrice } = aggregatedOrders[dishName];
+                            Object.keys(aggregatedOrders).forEach(dishName => {
+                                const { customerFirstNames, dishDescription, totalPrice } = aggregatedOrders[dishName];
 
-                    const orderCard = document.createElement('div');
-                    orderCard.classList.add('orderCard');
+                                const orderCard = document.createElement('div');
+                                orderCard.classList.add('orderCard');
 
-                    const title = document.createElement('h1');
-                    title.textContent = dishName;
+                                const title = document.createElement('h1');
+                                title.textContent = dishName;
 
-                    const description = document.createElement('h2');
-                    description.textContent = dishDescription;
+                                const description = document.createElement('h2');
+                                description.textContent = dishDescription;
 
-                    const price = document.createElement('h2');
-                    price.textContent = totalPrice;
+                                const price = document.createElement('h2');
+                                price.textContent = totalPrice;
 
-                    const addButton = document.createElement('button');
-                    addButton.textContent = 'إضافة للسلة';
-                    addButton.addEventListener('click', () => {
-                        addToShoppingBag(dishName, totalPrice, dishDescription);
-                    });
+                                const addButton = document.createElement('button');
+                                addButton.textContent = 'إضافة للسلة';
+                                
+                                addButton.addEventListener('click', () => {
+                                    
+                                    addToShoppingBag(dishName, totalPrice, dishDescription);
+                                });
 
-                    orderCard.appendChild(title);
-                    orderCard.appendChild(description);
-                    orderCard.appendChild(price);
-                    orderCard.appendChild(addButton);
+                                orderCard.appendChild(title);
+                                orderCard.appendChild(description);
+                                orderCard.appendChild(price);
+                                orderCard.appendChild(addButton);
 
-                    ordersContainer.appendChild(orderCard);
-                });
-            })
-            .catch(error => console.error(error));
-    }
+                                ordersContainer.appendChild(orderCard);
+                            });
+                        })
+                        .catch(error => console.error(error));
+                        
+                }
 
-    fetchOrders();
+                fetchOrders();
+                
+                
 </script>
 
 </body>
 </html>
 
 <style>
-
+    
         .dropbtn {
             background-color: #fff;
             color: #333;

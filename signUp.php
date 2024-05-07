@@ -23,8 +23,8 @@
       <p class="form-description">يرجى إدخال المعلومات المطلوبة بالأسفل</p>
       <form class="form" style="direction: rtl;" method="POST" action="fetch_data.php">
           <div class="form-group">
-            <input type="text" class="input-box" placeholder="الاسم الأول" name="CustomerFirstName" required>
-            <input type="text" class="input-box" placeholder="الاسم الأخير" name="CustomerLastName" required>
+            <input type="text" class="input-box" placeholder="اسم المستخدم" name="CustomerFirstName" required>
+            <input type="text" class="input-box" placeholder="الإسم الكامل" name="CustomerLastName" required>
           </div>
           <div class="form-group">
             <input type="text" class="input-box2" placeholder="رقم الهاتف" name="CustomerPhone" required>
