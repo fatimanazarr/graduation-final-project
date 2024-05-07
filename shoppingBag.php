@@ -57,7 +57,7 @@ session_start();
     
     <div class="total-price-button-container">
       <h1 id="totalPriceH1"></h1>
-      <button id="finishShoppingButton">إتمام الشراء</button>
+      <button id="finishShoppingButton">إتمام الطلب</button>
     </div>
   </section>
 

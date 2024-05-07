@@ -27,7 +27,7 @@ function addToShoppingBag(dishName, dishPrice, dishDescription) {
     selectedItems.push(selectedItem);
   }
 
-  console.log(selectedItems);
+  
 }
 function toggleMenu(event) {
   const cartDropdown = document.getElementById("cart-dropdown");
